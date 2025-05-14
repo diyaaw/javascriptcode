@@ -1,5 +1,6 @@
 const coding=["js","ruby","java","python","cpp"]
 // 
+//for each contains a callback function and callback has no name
 // coding.forEach( function (item){
     // console.log(item)
 // }) 

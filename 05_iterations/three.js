@@ -9,27 +9,29 @@
 //for (const num  of arr) {// here num is variable name
     // console.log(num);
 //}
- const greetings="Yello world"; 
- for (const greet of greetings) {
-if( greet==" "){
-    break;
-}
-console.log(`each char is ${greet}`);
+//  const greetings="Yello world"; 
+//  for (const greet of greetings) {
+// if( greet==" "){
+//     break;
+// }
+//console.log(`each char is ${greet}`);
 
  
- maps- object which holds unique values in the order given
+ //maps- object which holds unique values in the order given
  
-// const map=new Map()
-// map.set('IN',"India");
-// map.set('USA','United states of America') ;
-// map.set('Fr','France');
-// map.set('IN',"India");
+ const map=new Map()
+ map.set('IN',"India");
+ map.set('USA','United states of America') ;
+ map.set('Fr','France');
+ map.set('IN',"India");
 
 
-// console.log(map);
+ //console.log(map);
 
-// for (const [key,value] of map) {
-    // console.log(key,":-",value)
+
+ //syntax hai neeche
+ for (const [key,value] of map) {
+     console.log(key,":-",value)
 }
 
 
@@ -41,4 +43,4 @@ console.log(`each char is ${greet}`);
 // for (const [key,value] of myObj) {
 //     console.log(key ,":-",value );
 // }
-// here myObj is not itiratable
+// here myObj is not iterable
