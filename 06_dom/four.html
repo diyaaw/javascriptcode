@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: black; color: wheat;">
+   
+   <ul class="language">
+    <li>
+      Javascript
+   </li>
+</ul> 
+</body>
+<script>
+    function addlanguage(langname){
+        const li=document.createElement('li');
+        li.innerHTML=`${langname}`
+        document.querySelector('.language').
+    appendChild(li)
+    }
+    addlanguage("python")
+    addlanguage("rust")
+    addlanguage("cpp")
+
+    function addOptiLanguage(langname){
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(langname))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+    // edit 2 approaches
+    const secondlang = document.querySelector("li:nth-child(2)")
+    console.log(secondlang);
+    //secondlang.innerHTML="mojo"
+    // const newli=document.createElement('li')
+    // newli.textContent="mojo"
+    // secondlang.replacewith(newli)
+</script>
+</html>
