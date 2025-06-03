@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+
+    <!-- //all the events in js are run sequentially only and it is a sequential language -->
+<!-- 
+    the onclick approach is not good when we will scale our application we will face a lot of errors -->
+
+    <!-- but in case of react on adding onclick the code sill remains scalable -->
+<script>
+// document.getElementById('owl').onclick=function(){
+//     alert('owl clicked')
+// }
+
+// //this approach looks good in seeing but still thre can be some problems
+// instaed we shoudl use event listneres so they give ability to propogate and give us extra features
+
+
+//best approach
+// document.getElementById('owl').addEventListener('click',function(){
+// alert("owl clicked again")
+// },false)
+
+// the third parameter is false aur kai baar interview main dia jate hai questions jisme false ya true dalne bina complete hi nahi honge
+
+//attachEvent() al these were used in earlier times in internet explorer
+
+//study about the e object 
+
+document.getElementById('owl').addEventListener('click', function(e){
+    console.log(e)
+},false)
+
+//when we did this on clicking owl we got a lot of events pointer event on opening it we find 
+
+// in interviews a very basic question is asked make a application ki user kahi bhi click kar raa image main ya body  hai toh vo time meko do 
+
+//also asked to make a circle as x y is given in the pointer event and timestamp in the pointer event
+
+//all these questions are done by event only
+
+
+//events to study
+//  // type, timestamp, default prevented
+// target,toElement, srcelement, currentTarget
+//clientX, clientY,screenX,screenY
+//altkey,ctrlkey,shiftkey,keycode
+
+//evetn propogation
+// by default-false event bubling but also sometimes event capturing might also be used 
+
+// notcied an error in this i had the images and owl as true but the google as false so even after stopping my propogation the image and owl had alreay captured and were displaying the console.
+
+// below is the error
+
+
+// // Phase: CAPTURE (true)
+// document.getElementById('images').addEventListener('click', function(e) {
+//     console.log('clicked inside the ul');
+// }, true); // CAPTURING
+
+// // Phase: CAPTURE (true)
+// document.getElementById('owl').addEventListener('click', function(e) {
+//     console.log('owl clicked');
+// }, true); // CAPTURING
+
+// // Phase: BUBBLE (false)
+// document.getElementById('google').addEventListener('click', function(e) {
+//     e.preventDefault();
+//     e.stopPropagation(); // Stops BUBBLING only
+//     alert("are you sure");
+// }, false); // BUBBLING
+
+
+
+//correct implementation
+document.getElementById('images').addEventListener('click',function(e){
+    console.log('clicked inside the ul')
+},false)
+
+
+document.getElementById('owl').addEventListener('click',function(e){
+    console.log('owl clicked')
+},false)
+
+document.getElementById('google').addEventListener('click',function(e){
+   e.preventDefault();
+   e.stopPropagation();
+   console.log("hi google")
+   alert("are you sure")
+},false)
+
+
+document.querySelector('#images').addEventListener
+('click',function(e){
+    //pehla tareeka
+    console.log(e.target.tagName);
+    if (e.target.tagName=== 'IMG') {
+           let removeIt=e.target.parentNode
+    removeIt.remove();
+    }
+ 
+
+
+    //dusra tareeka
+    //removeIt.parentNode.removeChild(removeIt)
+
+},false)
+
+</script>
+</html>

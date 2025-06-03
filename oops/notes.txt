@@ -1,0 +1,3 @@
+1. prototype hamesha exist krta hai in the world of js
+
+//console main it is visible as methods push, pop, filter everything is there in the prototype only
