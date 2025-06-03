@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+      <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    // const sayDate=function(str){// this str refers to my psrameter passed in the setInterval method
+    //     console.log(str, Date.now())
+    // }
+    // const intervalId=setInterval(sayDate,1000, " this is the place where we give our parameter")
+    // clearInterval(intervalId)
+
+
+
+    const printmyname=function(para){
+        console.log(para,Date.now());
+    }
+
+    // my mistake- that let intervalid has to be in the scope of clearinterval to be accessed by it
+
+    let intervalId;
+
+    document.querySelector('#start').addEventListener('click',function(){
+         intervalid=setInterval(printmyname,1000,'diya female')
+    })
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(intervalid)
+    })
+  
+</script>
+</html>
